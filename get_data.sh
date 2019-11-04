@@ -15,3 +15,16 @@ then
 	rm *.zip
 	cd ${WORK_DIR}
 fi
+
+if [ ! -d ${DIR}/music ];
+then
+	wget -O ${DIR}/profiledata_06-May-2005.tar.gz http://www.iro.umontreal.ca/~lisa/datasets/profiledata_06-May-2005.tar.gz
+	cd ${DIR}
+	mkdir music
+	mv profiledata_06-May-2005.tar.gz music/
+	cd music
+	tar xvf profiledata_06-May-2005.tar.gz
+	mv profiledata_06-May-2005/* .
+	rmdir profiledata_06-May-2005
+	cd ${WORK_DIR}
+fi
