@@ -28,3 +28,15 @@ then
 	rmdir profiledata_06-May-2005
 	cd ${WORK_DIR}
 fi
+
+if [ ! -d ${DIR}/covtype ];
+then
+	cd ${DIR}
+	mkdir covtype
+	cd covtype
+	URL=https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/
+	wget ${URL}/covtype.data.gz
+	wget ${URL}/covtype.info
+	gunzip covtype.data.gz
+	cd ${WORK_DIR}
+fi
