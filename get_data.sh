@@ -40,3 +40,14 @@ then
 	gunzip covtype.data.gz
 	cd ${WORK_DIR}
 fi
+
+if [ ! -d ${DIR}/kdd ];
+then
+	cd ${DIR}
+	mkdir kdd
+	cd kdd
+	URL=http://kdd.ics.uci.edu/databases/kddcup99/kddcup.data.gz
+	wget ${URL}
+	gunzip kddcup.data.gz
+	cd ${WORK_DIR}
+fi
